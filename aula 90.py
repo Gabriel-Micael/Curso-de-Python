@@ -12,12 +12,13 @@ while True:
         idx = int(input('Digite o id do item a remover: '))
         try:
             lista.pop(idx)
+        except ValueError:
+            print("Erro no valor digitado!")
         except IndexError:
-            print("Erro no valor a remover!")
+            print("Valor não encontrado!")
 
     elif opcao == 3:
-        for item in enumerate(lista):
-            indice, value = item
+        for indice, value in enumerate(lista):
             print(indice, value)
     elif opcao == 4:
         break
